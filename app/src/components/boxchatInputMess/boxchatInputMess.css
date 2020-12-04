@@ -1,0 +1,31 @@
+.boxchatInput_container{
+    height: 60px;
+    display: flex;
+    border-top: 1px solid #e6e8eb;
+    align-items: center;
+    /* padding: 0px 10px 0px 10px; */
+    position: fixed;
+    bottom: 0;
+    flex: 1;
+    background-color:#fff;
+}
+.input_mess_container{
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid #e6e8eb;
+    display: flex;
+    align-items: center;
+    padding: 0px 0px 0px 10px;
+    flex: 1;
+}
+.input_mess{
+    font-size: 14px;
+    outline: none;
+    border: none;
+    flex: 1;
+}
+.icon{
+  height: 24px;
+  width: 24px;
+  margin: 0px 10px 0px 10px;
+}

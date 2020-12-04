@@ -1,0 +1,23 @@
+.chatlist_header_container{
+    height: 50px;
+    display: flex;
+    padding: 0px 10px 0px 10px;
+    justify-content: center;
+    align-items: center;
+}
+.chatlist_header_container_child{
+    flex: auto;
+    display: flex;
+    align-items: center;
+}
+.chatlist_header_container_child_right{
+    justify-content: flex-end;
+}
+.chatlist_header_title{
+    font-size: 18px;
+    font-weight: bold;
+}
+.chatlist_header_icon{
+    height: 24px;
+    width: 24px;
+}
