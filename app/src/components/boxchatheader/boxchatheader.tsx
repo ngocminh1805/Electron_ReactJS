@@ -6,12 +6,33 @@ interface Props {
   userName: string;
   isOnline: boolean;
 }
+interface State {
+  width: number;
+}
 
-class BoxchatHeader extends React.PureComponent<Props> {
+
+class BoxchatHeader extends React.PureComponent<Props,State> {
+
+  constructor(props: Props) {
+    super(props);
+
+    this.state = {
+      width: (window.innerWidth - 80) * 0.8,
+    };
+  }
+  updateWidth = () => {
+    this.setState({ width: (window.innerWidth - 80) * 0.8 });
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateWidth);
+  }
+
   render() {
     const { userImage, userName, isOnline } = this.props;
     return (
-      <div className={styles.boxchatheader_container}>
+      <div className={styles.boxchatheader_container}
+      style = {{width: this.state.width }}>
         <div className={styles.boxchatheader_avatar}>
           <div
             className={styles.status_light}

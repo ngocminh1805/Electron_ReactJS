@@ -1,6 +1,6 @@
 .boxchatheader_container{
     height: 60px;
-    width: 100%;
+    /* width: 100%; */
     border-bottom: 1px solid  #E6E8EB;
     display: flex;
     justify-content: flex-start;
