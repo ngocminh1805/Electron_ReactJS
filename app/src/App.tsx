@@ -9,17 +9,39 @@ import SearchBar from './components/searchbar/searchbar';
 import BoxChat from './components/boxchat/boxchat';
 import styles from './App.css';
 
+interface Props{}
+interface State{
+  height: number,
+  width: number,
+}
 
+class App extends React.PureComponent<Props,State> {
 
-class App extends React.PureComponent {
+  constructor(props:Props){
+    super(props)
+
+      this.state = {
+        height:window.innerHeight,
+        width:window.innerWidth
+      }
+  }
+
+  updateSize = () => {
+    this.setState({width:window.innerWidth,height:window.innerHeight});
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateSize);
+  }
+
   render() {
     return (
-      <div className={styles.container} style={{ height: window.innerHeight }}>
+      <div className={styles.container} style={{ height:this.state.height, width: this.state.width }}>
         <GlobalMenu />
         <Header />
         <div
           className={styles.body_container}
-          style={{ height: window.innerHeight - 50 }}
+          style={{ height:this.state.height - 50 }}
         >
           <div className={styles.body_column_1}>
             <Menu />
